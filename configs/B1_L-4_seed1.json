@@ -1,0 +1,20 @@
+{
+  "task": "layer",
+  "seed": 1,
+  "training_script": "core/train_understanding.py",
+  "output_dir": "runs/B1/manual_repeat_L-4_seed1",
+  "output_flag": "--out-root",
+  "seed_flag": "--seed",
+  "token_root": "data/weather_patch_tokens",
+  "label_dir": "data/understanding_labels",
+  "arguments": [
+    "--tok-root",
+    "data/weather_patch_tokens",
+    "--name",
+    "uwm_L-4_lam3_revision",
+    "--lam",
+    "3"
+  ],
+  "cache_regeneration": null,
+  "cache_note": "Reuse the L-4 cache generated for the main experiment."
+}

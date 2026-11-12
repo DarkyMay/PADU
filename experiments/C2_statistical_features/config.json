@@ -1,0 +1,43 @@
+{
+  "method": "Statistical Features (SF), adapted to the same YOLOv8m detector and hard-event target as PaDU",
+  "source": "https://arxiv.org/html/2403.01172v1#S4.SS3.SSS1",
+  "adaptations": [
+    "YOLOv8m last backbone SPPF activations instead of ResNet50",
+    "PaDU train-derived hard target instead of per-image mAP < 0.5",
+    "Same train/val/test cohort as PaDU instead of the source paper's validation-only introspection training",
+    "Explicit MLP and training parameters below are this controlled adaptation"
+  ],
+  "detector_weights": "runs/weatherfilm_runs/baseline_lr001/weights/best.pt",
+  "feature_dir": "runs/C2/features",
+  "label_dir": "data/understanding_labels",
+  "token_root": "data/weather_patch_tokens",
+  "image_size": 640,
+  "backbone_module_index": 9,
+  "backbone_module_type": "SPPF",
+  "feature_statistics": [
+    "spatial_mean",
+    "spatial_max",
+    "spatial_std_unbiased_false"
+  ],
+  "hidden_sizes": [
+    256,
+    128
+  ],
+  "dropout": 0.1,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "epochs": 100,
+  "patience": 20,
+  "batch_size": 64,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "selection": "maximum validation AUROC",
+  "standardization": "train mean/std only",
+  "positive_event": "original YOLOv8m difficulty == 2",
+  "class_weight": "train negative_count / positive_count",
+  "test_threshold": 0.5
+}

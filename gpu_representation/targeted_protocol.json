@@ -1,0 +1,9 @@
+{
+  "prompt": "Return compact JSON only. Consider people and road vehicles (cars, buses, trucks, motorcycles and bicycles). Describe the visible driving scene using keys weather, visibility (clear/reduced/severely_reduced), vehicle_count, person_count, small_distant_objects, largest_object_side (left/right/none), detection_difficulties. Counts should be estimated integers. For largest_object_side, use the traffic participant with the largest bounding-box area and compare its center with the image midline. Estimate from this image only; if uncertain use null. Do not assume detector outputs or ground truth.",
+  "max_new_tokens": 128,
+  "dtype": "float16, original text baseline protocol",
+  "layer": -4,
+  "selection": "unchanged validation criterion",
+  "label_access_during_generation": false,
+  "generation_model_path": "models/Qwen3.5-9B"
+}

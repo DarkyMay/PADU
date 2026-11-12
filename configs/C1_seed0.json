@@ -1,0 +1,16 @@
+{
+  "task": "text",
+  "seed": 0,
+  "training_script": "gpu_representation/train_targeted_readout.py",
+  "output_dir": "runs/C1/manual_repeat_seed0",
+  "output_flag": "--label-dir",
+  "seed_flag": "--seed",
+  "embedding_root": "runs/C1/targeted_embeddings",
+  "label_dir": "data/understanding_labels",
+  "arguments": [
+    "--emb-root",
+    "runs/C1/targeted_embeddings",
+    "--eval-split",
+    "test"
+  ]
+}

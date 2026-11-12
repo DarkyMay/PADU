@@ -1,0 +1,59 @@
+{
+  "validation_frames": [
+    "heavy_rain_valid_00001.jpg",
+    "dust_valid_00001.jpg",
+    "snow_valid_00001.jpg",
+    "flooding_valid_00001.jpg"
+  ],
+  "test_or_labels_used": false,
+  "max_new_tokens": 128,
+  "max_pixels": 1638400,
+  "model_path": "models/Qwen3.5-9B",
+  "dtype": "float16",
+  "prompt": "Return compact JSON only. Consider people and road vehicles (cars, buses, trucks, motorcycles and bicycles). Describe the visible driving scene using keys weather, visibility (clear/reduced/severely_reduced), vehicle_count, person_count, small_distant_objects, largest_object_side (left/right/none), detection_difficulties. Counts should be estimated integers. For largest_object_side, use the traffic participant with the largest bounding-box area and compare its center with the image midline. Estimate from this image only; if uncertain use null. Do not assume detector outputs or ground truth.",
+  "comparisons": {
+    "2": {
+      "seconds": 11.700101852416992,
+      "responses_identical": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_identical": true,
+      "peak_allocated": 19920377344,
+      "responses": {
+        "heavy_rain_valid_00001.jpg": "```json\n{\n    \"weather\": \"rainy\",\n    \"visibility\": \"reduced\",\n    \"vehicle_count\": 3,\n    \"person_count\": 0,\n    \"small_distant_objects\": 0,\n    \"largest_object_side\": \"right\",\n    \"detection_difficulties\": \"rain and fog\"\n}\n```",
+        "dust_valid_00001.jpg": "```json\n{\n    \"weather\": \"dusty\",\n    \"visibility\": \"severely_reduced\",\n    \"vehicle_count\": 4,\n    \"person_count\": 0,\n    \"small_distant_objects\": 2,\n    \"largest_object_side\": \"left\",\n    \"detection_difficulties\": \"dust\"\n}\n```",
+        "snow_valid_00001.jpg": "```json\n{\n    \"weather\": \"snowy\",\n    \"visibility\": \"reduced\",\n    \"vehicle_count\": 5,\n    \"person_count\": 0,\n    \"small_distant_objects\": [\n        \"snow-covered trees\",\n        \"building\",\n        \"street lamp\"\n    ],\n    \"largest_object_side\": \"left\",\n    \"detection_difficulties\": \"snowy conditions and reduced visibility\"\n}\n```",
+        "flooding_valid_00001.jpg": "```json\n{\n    \"weather\": \"clear\",\n    \"visibility\": \"clear\",\n    \"vehicle_count\": 4,\n    \"person_count\": 3,\n    \"small_distant_objects\": 1,\n    \"largest_object_side\": \"right\",\n    \"detection_difficulties\": null\n}\n```"
+      }
+    },
+    "4": {
+      "seconds": 7.563883066177368,
+      "responses_identical": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_identical": true,
+      "peak_allocated": 20979618304,
+      "responses": {
+        "heavy_rain_valid_00001.jpg": "```json\n{\n    \"weather\": \"rainy\",\n    \"visibility\": \"reduced\",\n    \"vehicle_count\": 3,\n    \"person_count\": 0,\n    \"small_distant_objects\": 0,\n    \"largest_object_side\": \"right\",\n    \"detection_difficulties\": \"rain and fog\"\n}\n```",
+        "dust_valid_00001.jpg": "```json\n{\n    \"weather\": \"dusty\",\n    \"visibility\": \"severely_reduced\",\n    \"vehicle_count\": 4,\n    \"person_count\": 0,\n    \"small_distant_objects\": 2,\n    \"largest_object_side\": \"left\",\n    \"detection_difficulties\": \"dust\"\n}\n```",
+        "snow_valid_00001.jpg": "```json\n{\n    \"weather\": \"snowy\",\n    \"visibility\": \"reduced\",\n    \"vehicle_count\": 5,\n    \"person_count\": 0,\n    \"small_distant_objects\": [\n        \"snow-covered trees\",\n        \"building\",\n        \"street lamp\"\n    ],\n    \"largest_object_side\": \"left\",\n    \"detection_difficulties\": \"snowy conditions and reduced visibility\"\n}\n```",
+        "flooding_valid_00001.jpg": "```json\n{\n    \"weather\": \"clear\",\n    \"visibility\": \"clear\",\n    \"vehicle_count\": 4,\n    \"person_count\": 3,\n    \"small_distant_objects\": 1,\n    \"largest_object_side\": \"right\",\n    \"detection_difficulties\": null\n}\n```"
+      }
+    }
+  },
+  "generation_batch_size": 4,
+  "validated_text_equivalence": true,
+  "batch1_seconds": 19.930951595306396,
+  "reference_responses": {
+    "heavy_rain_valid_00001.jpg": "```json\n{\n    \"weather\": \"rainy\",\n    \"visibility\": \"reduced\",\n    \"vehicle_count\": 3,\n    \"person_count\": 0,\n    \"small_distant_objects\": 0,\n    \"largest_object_side\": \"right\",\n    \"detection_difficulties\": \"rain and fog\"\n}\n```",
+    "dust_valid_00001.jpg": "```json\n{\n    \"weather\": \"dusty\",\n    \"visibility\": \"severely_reduced\",\n    \"vehicle_count\": 4,\n    \"person_count\": 0,\n    \"small_distant_objects\": 2,\n    \"largest_object_side\": \"left\",\n    \"detection_difficulties\": \"dust\"\n}\n```",
+    "snow_valid_00001.jpg": "```json\n{\n    \"weather\": \"snowy\",\n    \"visibility\": \"reduced\",\n    \"vehicle_count\": 5,\n    \"person_count\": 0,\n    \"small_distant_objects\": [\n        \"snow-covered trees\",\n        \"building\",\n        \"street lamp\"\n    ],\n    \"largest_object_side\": \"left\",\n    \"detection_difficulties\": \"snowy conditions and reduced visibility\"\n}\n```",
+    "flooding_valid_00001.jpg": "```json\n{\n    \"weather\": \"clear\",\n    \"visibility\": \"clear\",\n    \"vehicle_count\": 4,\n    \"person_count\": 3,\n    \"small_distant_objects\": 1,\n    \"largest_object_side\": \"right\",\n    \"detection_difficulties\": null\n}\n```"
+  }
+}

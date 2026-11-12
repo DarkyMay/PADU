@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this implementation, please cite the PaDU manuscript."
+title: "PaDU: Reading a Frozen Vision-Language Model, Not Prompting It, for Detector-Reliability Monitoring in Extreme-Weather Driving"
+type: software
+authors:
+  - given-names: Xiaogang
+    family-names: Tan
+  - given-names: Yuan
+    family-names: Dai
+  - given-names: Jing
+    family-names: Zhao
+  - given-names: Min
+    family-names: Peng
+  - given-names: Jing
+    family-names: He
+  - given-names: Kejun
+    family-names: Long

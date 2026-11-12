@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "runs/weatherfilm_runs/uwm_main_seed0/best_uwm.pt",
+      "sha256": "17e48ea8e86b6b5a3f8b8e8a4a9791096cf85c3e32494d87fb9600b3c87618a6",
+      "bytes": 22310061
+    },
+    {
+      "path": "runs/weatherfilm_runs/uwm_main_seed1/best_uwm.pt",
+      "sha256": "d1df6d8cbb131c6ec202309267218628748bd39741566605e6223bfdd9ee42a7",
+      "bytes": 22310061
+    },
+    {
+      "path": "runs/weatherfilm_runs/uwm_main_seed2/best_uwm.pt",
+      "sha256": "abc966fe172d55ef5323e74e385dafce776f067dfd5924fd2065f6a2fbddc108",
+      "bytes": 22310061
+    },
+    {
+      "path": "runs/weatherfilm_runs/baseline_lr001/weights/best.pt",
+      "sha256": "17e02a94678b97130caa1405d9e71e2f1bd77970ec6bcbdc4bd5dd1bad15fd5c",
+      "bytes": 52042578
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "task": "layer",
+  "seed": 1,
+  "training_script": "core/train_understanding.py",
+  "output_dir": "runs/B1/manual_repeat_L-2_seed1",
+  "output_flag": "--out-root",
+  "seed_flag": "--seed",
+  "token_root": "data/layers/L-2",
+  "label_dir": "data/understanding_labels",
+  "arguments": [
+    "--tok-root",
+    "data/layers/L-2",
+    "--name",
+    "uwm_L-2_lam3_revision",
+    "--lam",
+    "3"
+  ],
+  "cache_regeneration": [
+    "python3",
+    "core/extract_patch_tokens.py",
+    "--layer",
+    "-2",
+    "--output-dir",
+    "data/layers/L-2"
+  ]
+}

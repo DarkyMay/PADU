@@ -1,0 +1,42 @@
+{
+  "model_id": "PekingU/rtdetr_v2_r50vd",
+  "revision": "282494075698cab9faa1096ae26856890030c817",
+  "model_dir": "models/rtdetrv2_r50_coco",
+  "dataset_root": "data/xwod",
+  "validation_label_root": "data/understanding_labels",
+  "validation_token_root": "data/weather_patch_tokens",
+  "validation_cohort_policy": "Use the pre-existing 1740-frame PaDU validation cohort (valid cached feature plus both existing scene-label records). Excludes four frames already absent from that cohort, including one ambiguous mixed box/polygon annotation. Retain all 5945 training images and leave all original annotation files unchanged. This is not an architecture-only matched detector benchmark.",
+  "output_dir": "runs/C3/rtdetrv2_r50_finetuned_seed0",
+  "seed": 0,
+  "epochs": 72,
+  "patience": 20,
+  "batch_size": 4,
+  "gradient_accumulation": 8,
+  "workers": 4,
+  "image_size": 640,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0001,
+  "backbone_learning_rate": 1e-05,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "weight_decay": 0.0001,
+  "warmup_optimizer_steps": 2000,
+  "gradient_clip_norm": 0.1,
+  "mixed_precision": "float16",
+  "horizontal_flip_probability": 0.5,
+  "checkpoint_selection": "minimum sample-weighted validation detection loss",
+  "inference_confidence": 0.25,
+  "iou_match_threshold": 0.5,
+  "no_nms": true,
+  "label_names": [
+    "person",
+    "car",
+    "truck",
+    "motorcycle",
+    "bus",
+    "bicycle"
+  ],
+  "protocol_note": "HF fine-tuning adaptation, not an exact reproduction of the official COCO training recipe: same optimizer scale, 72-epoch cap, no EMA/multiscale/mosaic, resize plus horizontal flip, val-loss early stopping. COCO classification head is retained, labels aligned by category name. Existing split leakage limitations remain."
+}
